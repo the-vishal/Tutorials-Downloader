@@ -1,6 +1,11 @@
 import wget
 from urllib import request
 from tkinter import *
+import webbrowser
+
+
+def ref(click):
+    webbrowser.open_new(r'https://the-vishal.github.io/')
 
 win =Tk()
 win.geometry ="400x400"
@@ -33,6 +38,10 @@ lbl0 = Label(f,image=Photo0)
 lbl = Label(f, image = Photo)
 lbl.grid(row =5, column =0,padx=10,pady=10)
 lbl0.grid(row=4,column=0)
+lbl1 = Label(f, text="Created by :  the-vishal@github", fg='blue', cursor ="hand2")
+lbl1.grid(row =6, column =0,padx=10,pady=10)
+
+lbl1.bind("<Button-1>",  ref)
 
 win.mainloop()
 
