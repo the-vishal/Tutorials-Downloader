@@ -1,0 +1,40 @@
+import csv
+import pickle
+#from pushbullet import Pushbullet
+import smtplib
+
+
+
+
+file = 'mepits.csv'
+
+rows =[]
+with open(file, 'r') as csv_file:
+    reader = csv.reader(csv_file)
+
+    for row in reader:
+        rows.append(row[0])
+
+pic = open("counter.pickle","rb")
+count = list(pickle.load(pic))
+count[0] +=1
+print(count)
+pic.close()
+
+
+pickle_out = open("counter.pickle",'wb')
+pickle_in = pickle.dump(count,pickle_out)
+pickle_out.close()
+
+pic = open("counter.pickle","rb")
+link_number = pickle.load(pic)
+s = smtplib.SMTP('smtp.gmail.com',587)
+s.starttls()
+s.login('Your email',"Your Email app password") #get app password and allow less secured app after that confirm your activity.
+message = "\nToday's MEPITS Tutorial %s" %(str(rows[link_number[0]]))
+#print(message)
+s.sendmail('discretehacks4u@gmail.com','mail007tovishal@gmail.com',message)
+s.quit()
+
+#link_number = pickle.load(pic)
+#pb.push_note("MEPITS",body=rows[link_number[0]])
