@@ -33,7 +33,7 @@ s.starttls()
 s.login('Your email',"Your Email app password") #get app password and allow less secured app after that confirm your activity.
 message = "\nToday's MEPITS Tutorial %s" %(str(rows[link_number[0]]))
 #print(message)
-s.sendmail('discretehacks4u@gmail.com','mail007tovishal@gmail.com',message)
+s.sendmail('From-email','to-email',message)
 s.quit()
 
 #link_number = pickle.load(pic)
