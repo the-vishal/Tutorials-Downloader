@@ -18,3 +18,4 @@ Download readable documents from scribd.com
 1.Change the url and Directory path in script.  
 
 ![image](https://github.com/the-vishal/Tutorials-Downloader/blob/master/asset/Screenshot%20(61).png)
+Script in action: https://youtu.be/aE80EmK2NMY
