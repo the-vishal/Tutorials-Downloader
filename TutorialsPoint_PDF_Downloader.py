@@ -3,15 +3,19 @@ from urllib import request
 from tkinter import *
 import webbrowser
 
-
+#opening browser
 def ref(click):
     webbrowser.open_new(r'https://the-vishal.github.io/')
 
+    
+#tkinter front-end
 win =Tk()
 win.geometry ="400x400"
 win.wm_title('TutorialPoint Downloader')
 win.config(background = '#708090', height = 600, width = 450)
 
+
+#retrieve pdf file
 def PDF_Download():
     global tutorial
     tutorial=tutorial_name.get()
