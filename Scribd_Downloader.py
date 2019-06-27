@@ -6,12 +6,12 @@ import re
 import img2pdf
 
 browser = webdriver.Chrome()
-url = 'https://www.scribd.com/document/284732331/Text-Monochrome-Colour-Television-R-R-Gulati-pdf'
+url = 'https://es.scribd.com/document/358853751/3ro-BGU-Emprendimiento-y-Gestin-Texto-Del-Estudiante-12062017-B'
 browser.get(url)
 source = browser.page_source
 
 soup = bs.BeautifulSoup(source,"lxml")
-images =[]
+images =[178]
 
 for element in soup.find_all('div', attrs={'class':"ie_fix"}):
     try:
